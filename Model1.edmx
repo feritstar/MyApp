@@ -4,13 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbSinavOgrenciModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbSinavOgrenciModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TBLDERSLER">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AD" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbSinavOgrenci.dbo.TBLKULUPLER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TBLKULUPLER">
+          <Key>
+            <PropertyRef Name="KulupId" />
+          </Key>
+          <Property Name="KulupId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KulupAdi" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TBLNOTLAR">
           <Key>
@@ -62,6 +71,12 @@
           <EntitySet Name="TBLDERSLER" EntityType="Self.TBLDERSLER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLNOTLAR" EntityType="Self.TBLNOTLAR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLOGRENCI" EntityType="Self.TBLOGRENCI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLKULUPLER" EntityType="Self.TBLKULUPLER" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TBLKULUPLER].[KulupId] AS [KulupId], 
+    [TBLKULUPLER].[KulupAdi] AS [KulupAdi]
+    FROM [dbo].[TBLKULUPLER] AS [TBLKULUPLER]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_TBLNOTLAR_TBLDERSLER" Association="Self.FK_TBLNOTLAR_TBLDERSLER">
             <End Role="TBLDERSLER" EntitySet="TBLDERSLER" />
             <End Role="TBLNOTLAR" EntitySet="TBLNOTLAR" />
@@ -71,8 +86,7 @@
             <End Role="TBLNOTLAR" EntitySet="TBLNOTLAR" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbSinavOgrenciModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -145,7 +159,15 @@
             <End Role="TBLOGRENCI" EntitySet="TBLOGRENCI" />
             <End Role="TBLNOTLAR" EntitySet="TBLNOTLAR" />
           </AssociationSet>
+          <EntitySet Name="TBLKULUPLER" EntityType="DbSinavOgrenciModel.TBLKULUPLER" />
         </EntityContainer>
+        <EntityType Name="TBLKULUPLER">
+          <Key>
+            <PropertyRef Name="KulupId" />
+          </Key>
+          <Property Name="KulupId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KulupAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -181,6 +203,14 @@
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="Soyad" ColumnName="Soyad" />
                 <ScalarProperty Name="Fotograf" ColumnName="Fotograf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLKULUPLER">
+            <EntityTypeMapping TypeName="DbSinavOgrenciModel.TBLKULUPLER">
+              <MappingFragment StoreEntitySet="TBLKULUPLER">
+                <ScalarProperty Name="KulupAdi" ColumnName="KulupAdi" />
+                <ScalarProperty Name="KulupId" ColumnName="KulupId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
