@@ -36,18 +36,18 @@ namespace MyApp
             this.btnSil = new System.Windows.Forms.Button();
             this.btnBul = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxFotoPath = new System.Windows.Forms.TextBox();
+            this.textBoxOgrenciFotoPath = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxSoyAd = new System.Windows.Forms.TextBox();
+            this.textBoxOgrenciSoyAd = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxAD = new System.Windows.Forms.TextBox();
+            this.textBoxOgrenciAdi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.textBoxOgrenciId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxDersAdi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxDersID = new System.Windows.Forms.TextBox();
+            this.textBoxDersId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBoxOrtalama = new System.Windows.Forms.TextBox();
@@ -64,6 +64,7 @@ namespace MyApp
             this.btnNotListesi = new System.Windows.Forms.Button();
             this.btnOrtalamaHesapla = new System.Windows.Forms.Button();
             this.btnSinavNotuGuncelle = new System.Windows.Forms.Button();
+            this.btnDersEkle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -102,6 +103,7 @@ namespace MyApp
             this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnGuncelle
             // 
@@ -138,13 +140,13 @@ namespace MyApp
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBoxFotoPath);
+            this.groupBox1.Controls.Add(this.textBoxOgrenciFotoPath);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBoxSoyAd);
+            this.groupBox1.Controls.Add(this.textBoxOgrenciSoyAd);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBoxAD);
+            this.groupBox1.Controls.Add(this.textBoxOgrenciAdi);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBoxID);
+            this.groupBox1.Controls.Add(this.textBoxOgrenciId);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(238, 351);
             this.groupBox1.Name = "groupBox1";
@@ -153,12 +155,12 @@ namespace MyApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ogrenci Bilgisi";
             // 
-            // textBoxFotoPath
+            // textBoxOgrenciFotoPath
             // 
-            this.textBoxFotoPath.Location = new System.Drawing.Point(124, 165);
-            this.textBoxFotoPath.Name = "textBoxFotoPath";
-            this.textBoxFotoPath.Size = new System.Drawing.Size(100, 26);
-            this.textBoxFotoPath.TabIndex = 21;
+            this.textBoxOgrenciFotoPath.Location = new System.Drawing.Point(124, 165);
+            this.textBoxOgrenciFotoPath.Name = "textBoxOgrenciFotoPath";
+            this.textBoxOgrenciFotoPath.Size = new System.Drawing.Size(100, 26);
+            this.textBoxOgrenciFotoPath.TabIndex = 21;
             // 
             // label3
             // 
@@ -170,12 +172,12 @@ namespace MyApp
             this.label3.TabIndex = 20;
             this.label3.Text = "Foto Path:";
             // 
-            // textBoxSoyAd
+            // textBoxOgrenciSoyAd
             // 
-            this.textBoxSoyAd.Location = new System.Drawing.Point(124, 121);
-            this.textBoxSoyAd.Name = "textBoxSoyAd";
-            this.textBoxSoyAd.Size = new System.Drawing.Size(100, 26);
-            this.textBoxSoyAd.TabIndex = 19;
+            this.textBoxOgrenciSoyAd.Location = new System.Drawing.Point(124, 121);
+            this.textBoxOgrenciSoyAd.Name = "textBoxOgrenciSoyAd";
+            this.textBoxOgrenciSoyAd.Size = new System.Drawing.Size(100, 26);
+            this.textBoxOgrenciSoyAd.TabIndex = 19;
             // 
             // label4
             // 
@@ -187,12 +189,12 @@ namespace MyApp
             this.label4.TabIndex = 18;
             this.label4.Text = "SOYAD:";
             // 
-            // textBoxAD
+            // textBoxOgrenciAdi
             // 
-            this.textBoxAD.Location = new System.Drawing.Point(124, 81);
-            this.textBoxAD.Name = "textBoxAD";
-            this.textBoxAD.Size = new System.Drawing.Size(100, 26);
-            this.textBoxAD.TabIndex = 17;
+            this.textBoxOgrenciAdi.Location = new System.Drawing.Point(124, 81);
+            this.textBoxOgrenciAdi.Name = "textBoxOgrenciAdi";
+            this.textBoxOgrenciAdi.Size = new System.Drawing.Size(100, 26);
+            this.textBoxOgrenciAdi.TabIndex = 17;
             // 
             // label2
             // 
@@ -204,12 +206,12 @@ namespace MyApp
             this.label2.TabIndex = 16;
             this.label2.Text = "AD:";
             // 
-            // textBoxID
+            // textBoxOgrenciId
             // 
-            this.textBoxID.Location = new System.Drawing.Point(124, 37);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(100, 26);
-            this.textBoxID.TabIndex = 15;
+            this.textBoxOgrenciId.Location = new System.Drawing.Point(124, 37);
+            this.textBoxOgrenciId.Name = "textBoxOgrenciId";
+            this.textBoxOgrenciId.Size = new System.Drawing.Size(100, 26);
+            this.textBoxOgrenciId.TabIndex = 15;
             // 
             // label1
             // 
@@ -225,7 +227,7 @@ namespace MyApp
             // 
             this.groupBox2.Controls.Add(this.textBoxDersAdi);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBoxDersID);
+            this.groupBox2.Controls.Add(this.textBoxDersId);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(238, 568);
             this.groupBox2.Name = "groupBox2";
@@ -251,12 +253,12 @@ namespace MyApp
             this.label7.TabIndex = 16;
             this.label7.Text = "Ders Adi:";
             // 
-            // textBoxDersID
+            // textBoxDersId
             // 
-            this.textBoxDersID.Location = new System.Drawing.Point(124, 37);
-            this.textBoxDersID.Name = "textBoxDersID";
-            this.textBoxDersID.Size = new System.Drawing.Size(100, 26);
-            this.textBoxDersID.TabIndex = 15;
+            this.textBoxDersId.Location = new System.Drawing.Point(124, 37);
+            this.textBoxDersId.Name = "textBoxDersId";
+            this.textBoxDersId.Size = new System.Drawing.Size(100, 26);
+            this.textBoxDersId.TabIndex = 15;
             // 
             // label8
             // 
@@ -420,11 +422,24 @@ namespace MyApp
             this.btnSinavNotuGuncelle.Text = "Sınav Notu Güncelle";
             this.btnSinavNotuGuncelle.UseVisualStyleBackColor = true;
             // 
+            // btnDersEkle
+            // 
+            this.btnDersEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDersEkle.Location = new System.Drawing.Point(238, 711);
+            this.btnDersEkle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDersEkle.Name = "btnDersEkle";
+            this.btnDersEkle.Size = new System.Drawing.Size(194, 47);
+            this.btnDersEkle.TabIndex = 25;
+            this.btnDersEkle.Text = "Ders Ekle";
+            this.btnDersEkle.UseVisualStyleBackColor = true;
+            this.btnDersEkle.Click += new System.EventHandler(this.btnDersEkle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 774);
+            this.Controls.Add(this.btnDersEkle);
             this.Controls.Add(this.btnNotListesi);
             this.Controls.Add(this.btnDersListesi);
             this.Controls.Add(this.groupBox3);
@@ -461,18 +476,18 @@ namespace MyApp
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnBul;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxFotoPath;
+        private System.Windows.Forms.TextBox textBoxOgrenciFotoPath;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxSoyAd;
+        private System.Windows.Forms.TextBox textBoxOgrenciSoyAd;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxAD;
+        private System.Windows.Forms.TextBox textBoxOgrenciAdi;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.TextBox textBoxOgrenciId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBoxDersAdi;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxDersID;
+        private System.Windows.Forms.TextBox textBoxDersId;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBoxDurum;
@@ -489,6 +504,7 @@ namespace MyApp
         private System.Windows.Forms.Button btnNotListesi;
         private System.Windows.Forms.Button btnOrtalamaHesapla;
         private System.Windows.Forms.Button btnSinavNotuGuncelle;
+        private System.Windows.Forms.Button btnDersEkle;
     }
 }
 

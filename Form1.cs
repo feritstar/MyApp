@@ -52,5 +52,24 @@ namespace MyApp
                         };
             dataGridView1.DataSource = query.ToList();
         }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            TBLOGRENCI newStudent = new TBLOGRENCI();
+            newStudent.Ad = textBoxOgrenciAdi.Text;
+            newStudent.Soyad = textBoxOgrenciSoyAd.Text;
+            dbSinavOgrenciEntities.TBLOGRENCI.Add(newStudent);
+            dbSinavOgrenciEntities.SaveChanges();
+            MessageBox.Show(newStudent.Ad + " " + newStudent.Soyad + " isimli öğrenci listeye eklenmiştir.","Öğrenci Kayıt Sonucu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnDersEkle_Click(object sender, EventArgs e)
+        {
+            TBLDERSLER newLesson = new TBLDERSLER();
+            newLesson.AD = textBoxDersAdi.Text;
+            dbSinavOgrenciEntities.TBLDERSLER.Add(newLesson);
+            dbSinavOgrenciEntities.SaveChanges();
+            MessageBox.Show(newLesson.AD + " isimli ders listeye eklenmiştir.", "Ders Ekleme Sonucu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
