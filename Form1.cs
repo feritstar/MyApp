@@ -71,5 +71,14 @@ namespace MyApp
             dbSinavOgrenciEntities.SaveChanges();
             MessageBox.Show(newLesson.AD + " isimli ders listeye eklenmiştir.", "Ders Ekleme Sonucu", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(textBoxOgrenciId.Text);
+            var deletedObject = dbSinavOgrenciEntities.TBLOGRENCI.Find(id);
+            dbSinavOgrenciEntities.TBLOGRENCI.Remove(deletedObject);
+            dbSinavOgrenciEntities.SaveChanges();
+            MessageBox.Show(textBoxOgrenciId.Text + " ID numaralı öğrenci listeden silindi.", "Öğrenci Silme Sonucu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 }
