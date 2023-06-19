@@ -80,5 +80,16 @@ namespace MyApp
             dbSinavOgrenciEntities.SaveChanges();
             MessageBox.Show(textBoxOgrenciId.Text + " ID numaralı öğrenci listeden silindi.", "Öğrenci Silme Sonucu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(textBoxOgrenciId.Text);
+            var updatedObject = dbSinavOgrenciEntities.TBLOGRENCI.Find(id);
+            updatedObject.Ad = textBoxOgrenciAdi.Text;
+            updatedObject.Soyad = textBoxOgrenciSoyAd.Text;
+            updatedObject.Fotograf = textBoxOgrenciFotoPath.Text;
+            dbSinavOgrenciEntities.SaveChanges();
+            MessageBox.Show(updatedObject.Ad + " " + updatedObject.Soyad + " isimli öğrenci listede güncellendi.", "Öğrenci Bilgisi Güncelleme Sonucu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
