@@ -65,6 +65,7 @@ namespace MyApp
             this.btnOrtalamaHesapla = new System.Windows.Forms.Button();
             this.btnSinavNotuGuncelle = new System.Windows.Forms.Button();
             this.btnDersEkle = new System.Windows.Forms.Button();
+            this.btnProsedur = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -436,11 +437,24 @@ namespace MyApp
             this.btnDersEkle.UseVisualStyleBackColor = true;
             this.btnDersEkle.Click += new System.EventHandler(this.btnDersEkle_Click);
             // 
+            // btnProsedur
+            // 
+            this.btnProsedur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnProsedur.Location = new System.Drawing.Point(18, 768);
+            this.btnProsedur.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnProsedur.Name = "btnProsedur";
+            this.btnProsedur.Size = new System.Drawing.Size(194, 47);
+            this.btnProsedur.TabIndex = 26;
+            this.btnProsedur.Text = "Prosedür";
+            this.btnProsedur.UseVisualStyleBackColor = true;
+            this.btnProsedur.Click += new System.EventHandler(this.btnProsedur_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 774);
+            this.ClientSize = new System.Drawing.Size(1115, 826);
+            this.Controls.Add(this.btnProsedur);
             this.Controls.Add(this.btnDersEkle);
             this.Controls.Add(this.btnNotListesi);
             this.Controls.Add(this.btnDersListesi);
@@ -507,6 +521,7 @@ namespace MyApp
         private System.Windows.Forms.Button btnOrtalamaHesapla;
         private System.Windows.Forms.Button btnSinavNotuGuncelle;
         private System.Windows.Forms.Button btnDersEkle;
+        private System.Windows.Forms.Button btnProsedur;
     }
 }
 

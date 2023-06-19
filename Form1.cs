@@ -91,5 +91,10 @@ namespace MyApp
             dbSinavOgrenciEntities.SaveChanges();
             MessageBox.Show(updatedObject.Ad + " " + updatedObject.Soyad + " isimli öğrenci listede güncellendi.", "Öğrenci Bilgisi Güncelleme Sonucu", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnProsedur_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = dbSinavOgrenciEntities.NOTLISTESI();
+        }
     }
 }

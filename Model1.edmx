@@ -67,6 +67,7 @@ warning 6002: The table/view 'DbSinavOgrenci.dbo.TBLKULUPLER' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="NOTLISTESI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DbSinavOgrenciModelStoreContainer">
           <EntitySet Name="TBLDERSLER" EntityType="Self.TBLDERSLER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLNOTLAR" EntityType="Self.TBLNOTLAR" Schema="dbo" store:Type="Tables" />
@@ -160,6 +161,7 @@ warning 6002: The table/view 'DbSinavOgrenci.dbo.TBLKULUPLER' does not have a pr
             <End Role="TBLNOTLAR" EntitySet="TBLNOTLAR" />
           </AssociationSet>
           <EntitySet Name="TBLKULUPLER" EntityType="DbSinavOgrenciModel.TBLKULUPLER" />
+          <FunctionImport Name="NOTLISTESI" ReturnType="Collection(DbSinavOgrenciModel.NOTLISTESI_Result)" />
         </EntityContainer>
         <EntityType Name="TBLKULUPLER">
           <Key>
@@ -168,6 +170,15 @@ warning 6002: The table/view 'DbSinavOgrenci.dbo.TBLKULUPLER' does not have a pr
           <Property Name="KulupId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="KulupAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="NOTLISTESI_Result">
+          <Property Type="Int32" Name="NotID" Nullable="false" />
+          <Property Type="String" Name="AD_SOYAD" Nullable="true" MaxLength="101" />
+          <Property Type="String" Name="AD" Nullable="true" MaxLength="50" />
+          <Property Type="Int16" Name="Sinav1" Nullable="true" />
+          <Property Type="Int16" Name="Sinav2" Nullable="true" />
+          <Property Type="Int16" Name="ORTALAMA" Nullable="true" />
+          <Property Type="Boolean" Name="Durum" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -214,6 +225,19 @@ warning 6002: The table/view 'DbSinavOgrenci.dbo.TBLKULUPLER' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="NOTLISTESI" FunctionName="DbSinavOgrenciModel.Store.NOTLISTESI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DbSinavOgrenciModel.NOTLISTESI_Result">
+                <ScalarProperty Name="NotID" ColumnName="NotID" />
+                <ScalarProperty Name="AD_SOYAD" ColumnName="AD SOYAD" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="Sinav1" ColumnName="Sinav1" />
+                <ScalarProperty Name="Sinav2" ColumnName="Sinav2" />
+                <ScalarProperty Name="ORTALAMA" ColumnName="ORTALAMA" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
