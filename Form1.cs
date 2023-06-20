@@ -101,5 +101,47 @@ namespace MyApp
         {
             dataGridView1.DataSource = dbSinavOgrenciEntities.TBLOGRENCI.Where(x => x.Ad == textBoxOgrenciAdi.Text | x.Soyad == textBoxOgrenciSoyAd.Text).ToList();
         }
+
+        private void textBoxOgrenciAdi_TextChanged(object sender, EventArgs e)
+        {
+            string searchString = textBoxOgrenciAdi.Text;
+            var queryValues = from item in dbSinavOgrenciEntities.TBLOGRENCI
+                              where item.Ad.Contains(searchString)
+                              select item;
+
+            dataGridView1.DataSource = queryValues.ToList();
+        }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+
+            if (rb == radioBtnIsmeGoreSirala)
+            {
+                // Asc -- Ascending Order
+                var TBLOGRENCIList = dbSinavOgrenciEntities.TBLOGRENCI.OrderBy(p => p.Ad).ToList();
+                dataGridView1.DataSource = TBLOGRENCIList;
+            }
+
+            if (rb == radioBtnIsmeGoreTersSirala)
+            {
+                // Desc -- Descending Order
+                var TBLOGRENCIList = dbSinavOgrenciEntities.TBLOGRENCI.OrderByDescending(p => p.Ad).ToList();
+                dataGridView1.DataSource = TBLOGRENCIList;
+            }
+
+            if (rb == radioBtnIlk3KaydiGöster)
+            {
+                var TBLOGRENCIList = dbSinavOgrenciEntities.TBLOGRENCI.OrderBy(p => p.Ad).Take(3).ToList();
+                dataGridView1.DataSource = TBLOGRENCIList;
+            }
+
+            if (rb == radioBtnGetByID)
+            {
+                var IDNum = Convert.ToInt32(textBoxGeByID.Text);
+                var TBLOGRENCIList = dbSinavOgrenciEntities.TBLOGRENCI.Where(p => p.ID == IDNum).ToList();
+                dataGridView1.DataSource = TBLOGRENCIList;
+            }
+        }
     }
 }

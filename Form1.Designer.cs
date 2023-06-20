@@ -50,6 +50,10 @@ namespace MyApp
             this.textBoxDersId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnSinavNotuGuncelle = new System.Windows.Forms.Button();
+            this.btnOrtalamaHesapla = new System.Windows.Forms.Button();
+            this.textBoxDurum = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBoxOrtalama = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxSınav3 = new System.Windows.Forms.TextBox();
@@ -58,14 +62,16 @@ namespace MyApp
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxSınav1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxDurum = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.btnDersListesi = new System.Windows.Forms.Button();
             this.btnNotListesi = new System.Windows.Forms.Button();
-            this.btnOrtalamaHesapla = new System.Windows.Forms.Button();
-            this.btnSinavNotuGuncelle = new System.Windows.Forms.Button();
             this.btnDersEkle = new System.Windows.Forms.Button();
             this.btnProsedur = new System.Windows.Forms.Button();
+            this.radioBtnIsmeGoreSirala = new System.Windows.Forms.RadioButton();
+            this.radioBtnIsmeGoreTersSirala = new System.Windows.Forms.RadioButton();
+            this.radioBtnIlk3KaydiGöster = new System.Windows.Forms.RadioButton();
+            this.radioBtnGetByID = new System.Windows.Forms.RadioButton();
+            this.textBoxGeByID = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -199,6 +205,7 @@ namespace MyApp
             this.textBoxOgrenciAdi.Name = "textBoxOgrenciAdi";
             this.textBoxOgrenciAdi.Size = new System.Drawing.Size(100, 26);
             this.textBoxOgrenciAdi.TabIndex = 17;
+            this.textBoxOgrenciAdi.TextChanged += new System.EventHandler(this.textBoxOgrenciAdi_TextChanged);
             // 
             // label2
             // 
@@ -295,6 +302,45 @@ namespace MyApp
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sınav Bilgisi";
             // 
+            // btnSinavNotuGuncelle
+            // 
+            this.btnSinavNotuGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSinavNotuGuncelle.Location = new System.Drawing.Point(30, 298);
+            this.btnSinavNotuGuncelle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSinavNotuGuncelle.Name = "btnSinavNotuGuncelle";
+            this.btnSinavNotuGuncelle.Size = new System.Drawing.Size(194, 47);
+            this.btnSinavNotuGuncelle.TabIndex = 26;
+            this.btnSinavNotuGuncelle.Text = "Sınav Notu Güncelle";
+            this.btnSinavNotuGuncelle.UseVisualStyleBackColor = true;
+            // 
+            // btnOrtalamaHesapla
+            // 
+            this.btnOrtalamaHesapla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOrtalamaHesapla.Location = new System.Drawing.Point(30, 237);
+            this.btnOrtalamaHesapla.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnOrtalamaHesapla.Name = "btnOrtalamaHesapla";
+            this.btnOrtalamaHesapla.Size = new System.Drawing.Size(194, 47);
+            this.btnOrtalamaHesapla.TabIndex = 25;
+            this.btnOrtalamaHesapla.Text = "Ortalama Hesapla";
+            this.btnOrtalamaHesapla.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDurum
+            // 
+            this.textBoxDurum.Location = new System.Drawing.Point(124, 197);
+            this.textBoxDurum.Name = "textBoxDurum";
+            this.textBoxDurum.Size = new System.Drawing.Size(100, 26);
+            this.textBoxDurum.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(34, 202);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 20);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "DURUM:";
+            // 
             // textBoxOrtalama
             // 
             this.textBoxOrtalama.Location = new System.Drawing.Point(124, 157);
@@ -363,23 +409,6 @@ namespace MyApp
             this.label10.TabIndex = 14;
             this.label10.Text = "SINAV 1:";
             // 
-            // textBoxDurum
-            // 
-            this.textBoxDurum.Location = new System.Drawing.Point(124, 197);
-            this.textBoxDurum.Name = "textBoxDurum";
-            this.textBoxDurum.Size = new System.Drawing.Size(100, 26);
-            this.textBoxDurum.TabIndex = 23;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(34, 202);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 20);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "DURUM:";
-            // 
             // btnDersListesi
             // 
             this.btnDersListesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -403,28 +432,6 @@ namespace MyApp
             this.btnNotListesi.Text = "Not Listesi";
             this.btnNotListesi.UseVisualStyleBackColor = true;
             this.btnNotListesi.Click += new System.EventHandler(this.btnNotListesi_Click);
-            // 
-            // btnOrtalamaHesapla
-            // 
-            this.btnOrtalamaHesapla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrtalamaHesapla.Location = new System.Drawing.Point(30, 237);
-            this.btnOrtalamaHesapla.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnOrtalamaHesapla.Name = "btnOrtalamaHesapla";
-            this.btnOrtalamaHesapla.Size = new System.Drawing.Size(194, 47);
-            this.btnOrtalamaHesapla.TabIndex = 25;
-            this.btnOrtalamaHesapla.Text = "Ortalama Hesapla";
-            this.btnOrtalamaHesapla.UseVisualStyleBackColor = true;
-            // 
-            // btnSinavNotuGuncelle
-            // 
-            this.btnSinavNotuGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSinavNotuGuncelle.Location = new System.Drawing.Point(30, 298);
-            this.btnSinavNotuGuncelle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSinavNotuGuncelle.Name = "btnSinavNotuGuncelle";
-            this.btnSinavNotuGuncelle.Size = new System.Drawing.Size(194, 47);
-            this.btnSinavNotuGuncelle.TabIndex = 26;
-            this.btnSinavNotuGuncelle.Text = "Sınav Notu Güncelle";
-            this.btnSinavNotuGuncelle.UseVisualStyleBackColor = true;
             // 
             // btnDersEkle
             // 
@@ -450,11 +457,82 @@ namespace MyApp
             this.btnProsedur.UseVisualStyleBackColor = true;
             this.btnProsedur.Click += new System.EventHandler(this.btnProsedur_Click);
             // 
+            // radioBtnIsmeGoreSirala
+            // 
+            this.radioBtnIsmeGoreSirala.AutoSize = true;
+            this.radioBtnIsmeGoreSirala.Location = new System.Drawing.Point(803, 380);
+            this.radioBtnIsmeGoreSirala.Name = "radioBtnIsmeGoreSirala";
+            this.radioBtnIsmeGoreSirala.Size = new System.Drawing.Size(200, 24);
+            this.radioBtnIsmeGoreSirala.TabIndex = 27;
+            this.radioBtnIsmeGoreSirala.TabStop = true;
+            this.radioBtnIsmeGoreSirala.Text = "İsme Göre Sırala (A-->Z)";
+            this.radioBtnIsmeGoreSirala.UseVisualStyleBackColor = true;
+            this.radioBtnIsmeGoreSirala.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // radioBtnIsmeGoreTersSirala
+            // 
+            this.radioBtnIsmeGoreTersSirala.AutoSize = true;
+            this.radioBtnIsmeGoreTersSirala.Location = new System.Drawing.Point(803, 410);
+            this.radioBtnIsmeGoreTersSirala.Name = "radioBtnIsmeGoreTersSirala";
+            this.radioBtnIsmeGoreTersSirala.Size = new System.Drawing.Size(200, 24);
+            this.radioBtnIsmeGoreTersSirala.TabIndex = 28;
+            this.radioBtnIsmeGoreTersSirala.TabStop = true;
+            this.radioBtnIsmeGoreTersSirala.Text = "İsme Göre Sırala (Z-->A)";
+            this.radioBtnIsmeGoreTersSirala.UseVisualStyleBackColor = true;
+            this.radioBtnIsmeGoreTersSirala.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // radioBtnIlk3KaydiGöster
+            // 
+            this.radioBtnIlk3KaydiGöster.AutoSize = true;
+            this.radioBtnIlk3KaydiGöster.Location = new System.Drawing.Point(803, 440);
+            this.radioBtnIlk3KaydiGöster.Name = "radioBtnIlk3KaydiGöster";
+            this.radioBtnIlk3KaydiGöster.Size = new System.Drawing.Size(151, 24);
+            this.radioBtnIlk3KaydiGöster.TabIndex = 29;
+            this.radioBtnIlk3KaydiGöster.TabStop = true;
+            this.radioBtnIlk3KaydiGöster.Text = "İlk 3 Kaydı Göster";
+            this.radioBtnIlk3KaydiGöster.UseVisualStyleBackColor = true;
+            this.radioBtnIlk3KaydiGöster.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // radioBtnGetByID
+            // 
+            this.radioBtnGetByID.AutoSize = true;
+            this.radioBtnGetByID.Location = new System.Drawing.Point(803, 470);
+            this.radioBtnGetByID.Name = "radioBtnGetByID";
+            this.radioBtnGetByID.Size = new System.Drawing.Size(174, 24);
+            this.radioBtnGetByID.TabIndex = 30;
+            this.radioBtnGetByID.TabStop = true;
+            this.radioBtnGetByID.Text = "ID\'ye Göre Veri Getir";
+            this.radioBtnGetByID.UseVisualStyleBackColor = true;
+            this.radioBtnGetByID.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // textBoxGeByID
+            // 
+            this.textBoxGeByID.Location = new System.Drawing.Point(1022, 469);
+            this.textBoxGeByID.Name = "textBoxGeByID";
+            this.textBoxGeByID.Size = new System.Drawing.Size(51, 26);
+            this.textBoxGeByID.TabIndex = 23;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(980, 472);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(30, 20);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "ID:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 826);
+            this.Controls.Add(this.textBoxGeByID);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.radioBtnGetByID);
+            this.Controls.Add(this.radioBtnIlk3KaydiGöster);
+            this.Controls.Add(this.radioBtnIsmeGoreTersSirala);
+            this.Controls.Add(this.radioBtnIsmeGoreSirala);
             this.Controls.Add(this.btnProsedur);
             this.Controls.Add(this.btnDersEkle);
             this.Controls.Add(this.btnNotListesi);
@@ -481,6 +559,7 @@ namespace MyApp
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -523,6 +602,12 @@ namespace MyApp
         private System.Windows.Forms.Button btnSinavNotuGuncelle;
         private System.Windows.Forms.Button btnDersEkle;
         private System.Windows.Forms.Button btnProsedur;
+        private System.Windows.Forms.RadioButton radioBtnIsmeGoreSirala;
+        private System.Windows.Forms.RadioButton radioBtnIsmeGoreTersSirala;
+        private System.Windows.Forms.RadioButton radioBtnIlk3KaydiGöster;
+        private System.Windows.Forms.RadioButton radioBtnGetByID;
+        private System.Windows.Forms.TextBox textBoxGeByID;
+        private System.Windows.Forms.Label label12;
     }
 }
 
