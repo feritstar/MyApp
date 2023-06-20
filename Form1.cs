@@ -96,5 +96,10 @@ namespace MyApp
         {
             dataGridView1.DataSource = dbSinavOgrenciEntities.NOTLISTESI();
         }
+
+        private void btnBul_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = dbSinavOgrenciEntities.TBLOGRENCI.Where(x => x.Ad == textBoxOgrenciAdi.Text | x.Soyad == textBoxOgrenciSoyAd.Text).ToList();
+        }
     }
 }

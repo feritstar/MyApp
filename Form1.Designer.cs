@@ -140,6 +140,7 @@ namespace MyApp
             this.btnBul.TabIndex = 5;
             this.btnBul.Text = "Bul";
             this.btnBul.UseVisualStyleBackColor = true;
+            this.btnBul.Click += new System.EventHandler(this.btnBul_Click);
             // 
             // groupBox1
             // 
