@@ -50,7 +50,7 @@ namespace MyApp
             this.textBoxDersId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnSinavNotuGuncelle = new System.Windows.Forms.Button();
+            this.btnGetByJoin = new System.Windows.Forms.Button();
             this.btnOrtalamaHesapla = new System.Windows.Forms.Button();
             this.textBoxDurum = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -72,6 +72,10 @@ namespace MyApp
             this.radioBtnGetByID = new System.Windows.Forms.RadioButton();
             this.textBoxGeByID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.radioButtonGetByFirstChar = new System.Windows.Forms.RadioButton();
+            this.textBoxGetByFirstChar = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.radioButtonGetByLastChar = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -85,7 +89,7 @@ namespace MyApp
             this.dataGridView1.Location = new System.Drawing.Point(18, 18);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1084, 323);
+            this.dataGridView1.Size = new System.Drawing.Size(1104, 323);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnOgrenciListele
@@ -283,7 +287,7 @@ namespace MyApp
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnSinavNotuGuncelle);
+            this.groupBox3.Controls.Add(this.btnGetByJoin);
             this.groupBox3.Controls.Add(this.btnOrtalamaHesapla);
             this.groupBox3.Controls.Add(this.textBoxDurum);
             this.groupBox3.Controls.Add(this.label11);
@@ -302,16 +306,17 @@ namespace MyApp
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sınav Bilgisi";
             // 
-            // btnSinavNotuGuncelle
+            // btnGetByJoin
             // 
-            this.btnSinavNotuGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSinavNotuGuncelle.Location = new System.Drawing.Point(30, 298);
-            this.btnSinavNotuGuncelle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSinavNotuGuncelle.Name = "btnSinavNotuGuncelle";
-            this.btnSinavNotuGuncelle.Size = new System.Drawing.Size(194, 47);
-            this.btnSinavNotuGuncelle.TabIndex = 26;
-            this.btnSinavNotuGuncelle.Text = "Sınav Notu Güncelle";
-            this.btnSinavNotuGuncelle.UseVisualStyleBackColor = true;
+            this.btnGetByJoin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGetByJoin.Location = new System.Drawing.Point(30, 298);
+            this.btnGetByJoin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGetByJoin.Name = "btnGetByJoin";
+            this.btnGetByJoin.Size = new System.Drawing.Size(194, 47);
+            this.btnGetByJoin.TabIndex = 26;
+            this.btnGetByJoin.Text = "Join ile Getir";
+            this.btnGetByJoin.UseVisualStyleBackColor = true;
+            this.btnGetByJoin.Click += new System.EventHandler(this.btnGetByJoin_Click);
             // 
             // btnOrtalamaHesapla
             // 
@@ -507,7 +512,7 @@ namespace MyApp
             // 
             // textBoxGeByID
             // 
-            this.textBoxGeByID.Location = new System.Drawing.Point(1022, 469);
+            this.textBoxGeByID.Location = new System.Drawing.Point(1071, 466);
             this.textBoxGeByID.Name = "textBoxGeByID";
             this.textBoxGeByID.Size = new System.Drawing.Size(51, 26);
             this.textBoxGeByID.TabIndex = 23;
@@ -515,18 +520,64 @@ namespace MyApp
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(980, 472);
+            this.label12.Location = new System.Drawing.Point(1038, 469);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(30, 20);
             this.label12.TabIndex = 22;
             this.label12.Text = "ID:";
             // 
+            // radioButtonGetByFirstChar
+            // 
+            this.radioButtonGetByFirstChar.AutoSize = true;
+            this.radioButtonGetByFirstChar.Location = new System.Drawing.Point(803, 500);
+            this.radioButtonGetByFirstChar.Name = "radioButtonGetByFirstChar";
+            this.radioButtonGetByFirstChar.Size = new System.Drawing.Size(198, 24);
+            this.radioButtonGetByFirstChar.TabIndex = 31;
+            this.radioButtonGetByFirstChar.TabStop = true;
+            this.radioButtonGetByFirstChar.Text = "İlk Harfe Göre Veri Getir";
+            this.radioButtonGetByFirstChar.UseVisualStyleBackColor = true;
+            this.radioButtonGetByFirstChar.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // textBoxGetByFirstChar
+            // 
+            this.textBoxGetByFirstChar.Location = new System.Drawing.Point(1071, 498);
+            this.textBoxGetByFirstChar.MaxLength = 1;
+            this.textBoxGetByFirstChar.Name = "textBoxGetByFirstChar";
+            this.textBoxGetByFirstChar.Size = new System.Drawing.Size(51, 26);
+            this.textBoxGetByFirstChar.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1010, 501);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 20);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "HARF:";
+            // 
+            // radioButtonGetByLastChar
+            // 
+            this.radioButtonGetByLastChar.AutoSize = true;
+            this.radioButtonGetByLastChar.Location = new System.Drawing.Point(803, 530);
+            this.radioButtonGetByLastChar.Name = "radioButtonGetByLastChar";
+            this.radioButtonGetByLastChar.Size = new System.Drawing.Size(211, 24);
+            this.radioButtonGetByLastChar.TabIndex = 34;
+            this.radioButtonGetByLastChar.TabStop = true;
+            this.radioButtonGetByLastChar.Text = "Son Harfe Göre Veri Getir";
+            this.radioButtonGetByLastChar.UseVisualStyleBackColor = true;
+            this.radioButtonGetByLastChar.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 826);
+            this.ClientSize = new System.Drawing.Size(1144, 826);
+            this.Controls.Add(this.radioButtonGetByLastChar);
+            this.Controls.Add(this.textBoxGetByFirstChar);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.radioButtonGetByFirstChar);
             this.Controls.Add(this.textBoxGeByID);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.radioBtnGetByID);
@@ -599,7 +650,7 @@ namespace MyApp
         private System.Windows.Forms.Button btnDersListesi;
         private System.Windows.Forms.Button btnNotListesi;
         private System.Windows.Forms.Button btnOrtalamaHesapla;
-        private System.Windows.Forms.Button btnSinavNotuGuncelle;
+        private System.Windows.Forms.Button btnGetByJoin;
         private System.Windows.Forms.Button btnDersEkle;
         private System.Windows.Forms.Button btnProsedur;
         private System.Windows.Forms.RadioButton radioBtnIsmeGoreSirala;
@@ -608,6 +659,10 @@ namespace MyApp
         private System.Windows.Forms.RadioButton radioBtnGetByID;
         private System.Windows.Forms.TextBox textBoxGeByID;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RadioButton radioButtonGetByFirstChar;
+        private System.Windows.Forms.TextBox textBoxGetByFirstChar;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RadioButton radioButtonGetByLastChar;
     }
 }
 

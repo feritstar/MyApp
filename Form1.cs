@@ -22,7 +22,7 @@ namespace MyApp
         private void btnDersListesi_Click(object sender, EventArgs e)
         {
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-DOPHLKN;Initial Catalog=DbSinavOgrenci;Integrated Security=True");
-            SqlCommand sqlCommand = new SqlCommand("Select * From TBLDERSLER",sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("Select * From TBLDERSLER", sqlConnection);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
             DataTable dataTable = new DataTable();
             sqlDataAdapter.Fill(dataTable);
@@ -30,7 +30,7 @@ namespace MyApp
         }
 
         private void btnOgrenciListele_Click(object sender, EventArgs e)
-        {            
+        {
             dataGridView1.DataSource = dbSinavOgrenciEntities.TBLOGRENCI.ToList();
             dataGridView1.Columns[3].Visible = false;
             dataGridView1.Columns[4].Visible = false;
@@ -42,8 +42,9 @@ namespace MyApp
                         select new
                         {
                             item.NotID,
-                            item.OgrID,
-                            item.DersID,
+                            item.TBLOGRENCI.Ad,
+                            item.TBLOGRENCI.Soyad,
+                            item.TBLDERSLER.AD,
                             item.Sinav1,
                             item.Sinav2,
                             item.Sinav3,
@@ -60,7 +61,7 @@ namespace MyApp
             newStudent.Soyad = textBoxOgrenciSoyAd.Text;
             dbSinavOgrenciEntities.TBLOGRENCI.Add(newStudent);
             dbSinavOgrenciEntities.SaveChanges();
-            MessageBox.Show(newStudent.Ad + " " + newStudent.Soyad + " isimli öğrenci listeye eklenmiştir.","Öğrenci Kayıt Sonucu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(newStudent.Ad + " " + newStudent.Soyad + " isimli öğrenci listeye eklenmiştir.", "Öğrenci Kayıt Sonucu", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnDersEkle_Click(object sender, EventArgs e)
@@ -142,6 +143,39 @@ namespace MyApp
                 var TBLOGRENCIList = dbSinavOgrenciEntities.TBLOGRENCI.Where(p => p.ID == IDNum).ToList();
                 dataGridView1.DataSource = TBLOGRENCIList;
             }
+
+            if (rb == radioButtonGetByFirstChar)
+            {
+                var firstChar = textBoxGetByFirstChar.Text;
+                var TBLOGRENCIList = dbSinavOgrenciEntities.TBLOGRENCI.Where(p => p.Ad.StartsWith(firstChar)).ToList();
+                dataGridView1.DataSource = TBLOGRENCIList;
+            }
+
+            if (rb == radioButtonGetByLastChar)
+            {
+                var firstChar = textBoxGetByFirstChar.Text;
+                var TBLOGRENCIList = dbSinavOgrenciEntities.TBLOGRENCI.Where(p => p.Ad.EndsWith(firstChar)).ToList();
+                dataGridView1.DataSource = TBLOGRENCIList;
+            }
+        }
+
+        private void btnGetByJoin_Click(object sender, EventArgs e)
+        {
+            var query = from db1 in dbSinavOgrenciEntities.TBLNOTLAR
+                        join db2 in dbSinavOgrenciEntities.TBLOGRENCI
+                        on db1.OgrID equals db2.ID
+                        join db3 in dbSinavOgrenciEntities.TBLDERSLER
+                        on db1.DersID equals db3.ID
+                        select new
+                        {
+                            Name = db2.Ad + " " + db2.Soyad,
+                            Course = db3.AD,
+                            Exam1 = db1.Sinav1,
+                            Exam2 = db1.Sinav2,
+                            Exam3 = db1.Sinav3
+                        };
+
+            dataGridView1.DataSource = query.ToList();
         }
     }
 }
