@@ -77,10 +77,26 @@ namespace MyApp
                 {
                     StudentID = x.OgrID,
                     Average = x.Ortalama,
-                    Durumu = x.Durum == true ? "Geçti" : "Kaldı"
+                    PassOrFail = x.Durum == true ? "Geçti" : "Kaldı"
                 });
                 dataGridView1.DataSource = query.ToList();
+            }
 
+            // LinQ SelectMany Projection Usage with two tables
+            if (radioButtonJoin.Checked == true)
+            {
+                var query = dbSinavOgrenciEntities.TBLNOTLAR.SelectMany(
+                                x=> dbSinavOgrenciEntities.TBLOGRENCI.Where(
+                                    y=> y.ID == x.OgrID),
+                                        (x,y)=> 
+                                            new 
+                                            {
+                                                Name = y.Ad,
+                                                Surname = y.Soyad,
+                                                Average = x.Ortalama,
+                                                PassOrFail = x.Durum == true ? "Geçti" : "Kaldı"
+                                            });
+                dataGridView1.DataSource = query.ToList();
             }
         }
     }

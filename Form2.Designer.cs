@@ -40,6 +40,7 @@ namespace MyApp
             this.radioButtonGetByBiggerNameSmallSurname = new System.Windows.Forms.RadioButton();
             this.radioButtonConditionalSelect = new System.Windows.Forms.RadioButton();
             this.radioButtonPassOrFail = new System.Windows.Forms.RadioButton();
+            this.radioButtonJoin = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,35 +48,38 @@ namespace MyApp
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 18);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(1172, 494);
             this.dataGridView1.TabIndex = 0;
             // 
             // textBoxGetByNameOrSurname
             // 
-            this.textBoxGetByNameOrSurname.Location = new System.Drawing.Point(263, 247);
+            this.textBoxGetByNameOrSurname.Location = new System.Drawing.Point(394, 591);
+            this.textBoxGetByNameOrSurname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxGetByNameOrSurname.MaxLength = 5000;
             this.textBoxGetByNameOrSurname.Name = "textBoxGetByNameOrSurname";
-            this.textBoxGetByNameOrSurname.Size = new System.Drawing.Size(82, 20);
+            this.textBoxGetByNameOrSurname.Size = new System.Drawing.Size(121, 26);
             this.textBoxGetByNameOrSurname.TabIndex = 37;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(169, 250);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(254, 595);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 13);
+            this.label13.Size = new System.Drawing.Size(126, 20);
             this.label13.TabIndex = 36;
             this.label13.Text = "Adı veya SoyAdı:";
             // 
             // radioButtonGetSmallerGrades
             // 
             this.radioButtonGetSmallerGrades.AutoSize = true;
-            this.radioButtonGetSmallerGrades.Location = new System.Drawing.Point(13, 202);
+            this.radioButtonGetSmallerGrades.Location = new System.Drawing.Point(20, 522);
+            this.radioButtonGetSmallerGrades.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButtonGetSmallerGrades.Name = "radioButtonGetSmallerGrades";
-            this.radioButtonGetSmallerGrades.Size = new System.Drawing.Size(166, 17);
+            this.radioButtonGetSmallerGrades.Size = new System.Drawing.Size(232, 24);
             this.radioButtonGetSmallerGrades.TabIndex = 35;
             this.radioButtonGetSmallerGrades.TabStop = true;
             this.radioButtonGetSmallerGrades.Text = "1. Sınavı 50\'den Küçük Notlar";
@@ -84,10 +88,10 @@ namespace MyApp
             // btnGetByLinq
             // 
             this.btnGetByLinq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetByLinq.Location = new System.Drawing.Point(12, 397);
-            this.btnGetByLinq.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGetByLinq.Location = new System.Drawing.Point(18, 665);
+            this.btnGetByLinq.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnGetByLinq.Name = "btnGetByLinq";
-            this.btnGetByLinq.Size = new System.Drawing.Size(194, 47);
+            this.btnGetByLinq.Size = new System.Drawing.Size(291, 72);
             this.btnGetByLinq.TabIndex = 34;
             this.btnGetByLinq.Text = "Linq Entity";
             this.btnGetByLinq.UseVisualStyleBackColor = true;
@@ -96,9 +100,10 @@ namespace MyApp
             // radioButtonGetByName
             // 
             this.radioButtonGetByName.AutoSize = true;
-            this.radioButtonGetByName.Location = new System.Drawing.Point(13, 225);
+            this.radioButtonGetByName.Location = new System.Drawing.Point(20, 557);
+            this.radioButtonGetByName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButtonGetByName.Name = "radioButtonGetByName";
-            this.radioButtonGetByName.Size = new System.Drawing.Size(99, 17);
+            this.radioButtonGetByName.Size = new System.Drawing.Size(140, 24);
             this.radioButtonGetByName.TabIndex = 38;
             this.radioButtonGetByName.TabStop = true;
             this.radioButtonGetByName.Text = "Adı Ferit Olanlar";
@@ -107,9 +112,10 @@ namespace MyApp
             // radioButtonGetByTextBox
             // 
             this.radioButtonGetByTextBox.AutoSize = true;
-            this.radioButtonGetByTextBox.Location = new System.Drawing.Point(13, 248);
+            this.radioButtonGetByTextBox.Location = new System.Drawing.Point(20, 592);
+            this.radioButtonGetByTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButtonGetByTextBox.Name = "radioButtonGetByTextBox";
-            this.radioButtonGetByTextBox.Size = new System.Drawing.Size(150, 17);
+            this.radioButtonGetByTextBox.Size = new System.Drawing.Size(215, 24);
             this.radioButtonGetByTextBox.TabIndex = 39;
             this.radioButtonGetByTextBox.TabStop = true;
             this.radioButtonGetByTextBox.Text = "Textten Gelen Veriye Göre";
@@ -118,9 +124,10 @@ namespace MyApp
             // radioButtonGetBySurname
             // 
             this.radioButtonGetBySurname.AutoSize = true;
-            this.radioButtonGetBySurname.Location = new System.Drawing.Point(13, 271);
+            this.radioButtonGetBySurname.Location = new System.Drawing.Point(20, 628);
+            this.radioButtonGetBySurname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButtonGetBySurname.Name = "radioButtonGetBySurname";
-            this.radioButtonGetBySurname.Size = new System.Drawing.Size(95, 17);
+            this.radioButtonGetBySurname.Size = new System.Drawing.Size(133, 24);
             this.radioButtonGetBySurname.TabIndex = 40;
             this.radioButtonGetBySurname.TabStop = true;
             this.radioButtonGetBySurname.Text = "Soyadına Göre";
@@ -129,9 +136,10 @@ namespace MyApp
             // radioButtonGetByBiggerNameSmallSurname
             // 
             this.radioButtonGetByBiggerNameSmallSurname.AutoSize = true;
-            this.radioButtonGetByBiggerNameSmallSurname.Location = new System.Drawing.Point(12, 294);
+            this.radioButtonGetByBiggerNameSmallSurname.Location = new System.Drawing.Point(576, 522);
+            this.radioButtonGetByBiggerNameSmallSurname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButtonGetByBiggerNameSmallSurname.Name = "radioButtonGetByBiggerNameSmallSurname";
-            this.radioButtonGetByBiggerNameSmallSurname.Size = new System.Drawing.Size(138, 17);
+            this.radioButtonGetByBiggerNameSmallSurname.Size = new System.Drawing.Size(192, 24);
             this.radioButtonGetByBiggerNameSmallSurname.TabIndex = 41;
             this.radioButtonGetByBiggerNameSmallSurname.TabStop = true;
             this.radioButtonGetByBiggerNameSmallSurname.Text = "Ad Büyük Soyad Küçük";
@@ -140,9 +148,10 @@ namespace MyApp
             // radioButtonConditionalSelect
             // 
             this.radioButtonConditionalSelect.AutoSize = true;
-            this.radioButtonConditionalSelect.Location = new System.Drawing.Point(12, 317);
+            this.radioButtonConditionalSelect.Location = new System.Drawing.Point(576, 557);
+            this.radioButtonConditionalSelect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButtonConditionalSelect.Name = "radioButtonConditionalSelect";
-            this.radioButtonConditionalSelect.Size = new System.Drawing.Size(80, 17);
+            this.radioButtonConditionalSelect.Size = new System.Drawing.Size(111, 24);
             this.radioButtonConditionalSelect.TabIndex = 42;
             this.radioButtonConditionalSelect.TabStop = true;
             this.radioButtonConditionalSelect.Text = "Şartlı Seçim";
@@ -151,19 +160,33 @@ namespace MyApp
             // radioButtonPassOrFail
             // 
             this.radioButtonPassOrFail.AutoSize = true;
-            this.radioButtonPassOrFail.Location = new System.Drawing.Point(12, 340);
+            this.radioButtonPassOrFail.Location = new System.Drawing.Point(576, 593);
+            this.radioButtonPassOrFail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButtonPassOrFail.Name = "radioButtonPassOrFail";
-            this.radioButtonPassOrFail.Size = new System.Drawing.Size(102, 17);
+            this.radioButtonPassOrFail.Size = new System.Drawing.Size(143, 24);
             this.radioButtonPassOrFail.TabIndex = 43;
             this.radioButtonPassOrFail.TabStop = true;
             this.radioButtonPassOrFail.Text = "Geçti mi Kaldı mı";
             this.radioButtonPassOrFail.UseVisualStyleBackColor = true;
             // 
+            // radioButtonJoin
+            // 
+            this.radioButtonJoin.AutoSize = true;
+            this.radioButtonJoin.Location = new System.Drawing.Point(578, 628);
+            this.radioButtonJoin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonJoin.Name = "radioButtonJoin";
+            this.radioButtonJoin.Size = new System.Drawing.Size(79, 24);
+            this.radioButtonJoin.TabIndex = 44;
+            this.radioButtonJoin.TabStop = true;
+            this.radioButtonJoin.Text = "Birleştir";
+            this.radioButtonJoin.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1208, 749);
+            this.Controls.Add(this.radioButtonJoin);
             this.Controls.Add(this.radioButtonPassOrFail);
             this.Controls.Add(this.radioButtonConditionalSelect);
             this.Controls.Add(this.radioButtonGetByBiggerNameSmallSurname);
@@ -175,6 +198,8 @@ namespace MyApp
             this.Controls.Add(this.radioButtonGetSmallerGrades);
             this.Controls.Add(this.btnGetByLinq);
             this.Controls.Add(this.dataGridView1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
@@ -197,5 +222,6 @@ namespace MyApp
         private System.Windows.Forms.RadioButton radioButtonGetByBiggerNameSmallSurname;
         private System.Windows.Forms.RadioButton radioButtonConditionalSelect;
         private System.Windows.Forms.RadioButton radioButtonPassOrFail;
+        private System.Windows.Forms.RadioButton radioButtonJoin;
     }
 }
