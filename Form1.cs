@@ -177,5 +177,15 @@ namespace MyApp
 
             dataGridView1.DataSource = query.ToList();
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxGetByFirstChar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

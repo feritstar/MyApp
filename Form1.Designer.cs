@@ -546,6 +546,7 @@ namespace MyApp
             this.textBoxGetByFirstChar.Name = "textBoxGetByFirstChar";
             this.textBoxGetByFirstChar.Size = new System.Drawing.Size(51, 26);
             this.textBoxGetByFirstChar.TabIndex = 33;
+            this.textBoxGetByFirstChar.TextChanged += new System.EventHandler(this.textBoxGetByFirstChar_TextChanged);
             // 
             // label13
             // 
@@ -556,6 +557,7 @@ namespace MyApp
             this.label13.Size = new System.Drawing.Size(58, 20);
             this.label13.TabIndex = 32;
             this.label13.Text = "HARF:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // radioButtonGetByLastChar
             // 
