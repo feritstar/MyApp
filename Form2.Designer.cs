@@ -39,6 +39,7 @@ namespace MyApp
             this.radioButtonGetBySurname = new System.Windows.Forms.RadioButton();
             this.radioButtonGetByBiggerNameSmallSurname = new System.Windows.Forms.RadioButton();
             this.radioButtonConditionalSelect = new System.Windows.Forms.RadioButton();
+            this.radioButtonPassOrFail = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,11 +148,23 @@ namespace MyApp
             this.radioButtonConditionalSelect.Text = "Şartlı Seçim";
             this.radioButtonConditionalSelect.UseVisualStyleBackColor = true;
             // 
+            // radioButtonPassOrFail
+            // 
+            this.radioButtonPassOrFail.AutoSize = true;
+            this.radioButtonPassOrFail.Location = new System.Drawing.Point(12, 340);
+            this.radioButtonPassOrFail.Name = "radioButtonPassOrFail";
+            this.radioButtonPassOrFail.Size = new System.Drawing.Size(102, 17);
+            this.radioButtonPassOrFail.TabIndex = 43;
+            this.radioButtonPassOrFail.TabStop = true;
+            this.radioButtonPassOrFail.Text = "Geçti mi Kaldı mı";
+            this.radioButtonPassOrFail.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.radioButtonPassOrFail);
             this.Controls.Add(this.radioButtonConditionalSelect);
             this.Controls.Add(this.radioButtonGetByBiggerNameSmallSurname);
             this.Controls.Add(this.radioButtonGetBySurname);
@@ -183,5 +196,6 @@ namespace MyApp
         private System.Windows.Forms.RadioButton radioButtonGetBySurname;
         private System.Windows.Forms.RadioButton radioButtonGetByBiggerNameSmallSurname;
         private System.Windows.Forms.RadioButton radioButtonConditionalSelect;
+        private System.Windows.Forms.RadioButton radioButtonPassOrFail;
     }
 }

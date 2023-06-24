@@ -51,7 +51,7 @@ namespace MyApp
                 dataGridView1.DataSource = query.ToList();
             }
 
-            // LinQ Select restriction with two anonymoust type
+            // LinQ Select restriction with two anonymous type
             if (radioButtonGetByBiggerNameSmallSurname.Checked == true)
             {
                 var query = dbSinavOgrenciEntities.TBLOGRENCI.Select(x => new { Name = x.Ad.ToUpper(), SurName = x.Soyad.ToLower() });
@@ -59,7 +59,7 @@ namespace MyApp
                 dataGridView1.DataSource = query.ToList();
             }
 
-            // LinQ Conditional Select with two anonymoust type
+            // LinQ Conditional Select with two anonymous type
             if (radioButtonConditionalSelect.Checked == true)
             {
                 var query = dbSinavOgrenciEntities.TBLOGRENCI.Select(p => new
@@ -68,6 +68,19 @@ namespace MyApp
                     SurName = p.Soyad.ToLower()
                 }).Where(x => x.Name == "Ferit");
                 dataGridView1.DataSource = query.ToList();
+            }
+
+            // LinQ Conditional Select with two anonymous type and one anonymous type with extra pass/fail condition
+            if (radioButtonPassOrFail.Checked == true)
+            {
+                var query = dbSinavOgrenciEntities.TBLNOTLAR.Select(x => new
+                {
+                    StudentID = x.OgrID,
+                    Average = x.Ortalama,
+                    Durumu = x.Durum == true ? "Geçti" : "Kaldı"
+                });
+                dataGridView1.DataSource = query.ToList();
+
             }
         }
     }
