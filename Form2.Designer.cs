@@ -41,6 +41,10 @@ namespace MyApp
             this.radioButtonConditionalSelect = new System.Windows.Forms.RadioButton();
             this.radioButtonPassOrFail = new System.Windows.Forms.RadioButton();
             this.radioButtonJoin = new System.Windows.Forms.RadioButton();
+            this.radioButtonGetFirstThree = new System.Windows.Forms.RadioButton();
+            this.radioButtonGetLastThree = new System.Windows.Forms.RadioButton();
+            this.radioButtonSkipFirstFive = new System.Windows.Forms.RadioButton();
+            this.radioButtonOrderByName = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,11 +185,63 @@ namespace MyApp
             this.radioButtonJoin.Text = "Birleştir";
             this.radioButtonJoin.UseVisualStyleBackColor = true;
             // 
+            // radioButtonGetFirstThree
+            // 
+            this.radioButtonGetFirstThree.AutoSize = true;
+            this.radioButtonGetFirstThree.Location = new System.Drawing.Point(818, 522);
+            this.radioButtonGetFirstThree.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonGetFirstThree.Name = "radioButtonGetFirstThree";
+            this.radioButtonGetFirstThree.Size = new System.Drawing.Size(136, 24);
+            this.radioButtonGetFirstThree.TabIndex = 45;
+            this.radioButtonGetFirstThree.TabStop = true;
+            this.radioButtonGetFirstThree.Text = "İlk Üç Değeri Al";
+            this.radioButtonGetFirstThree.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonGetLastThree
+            // 
+            this.radioButtonGetLastThree.AutoSize = true;
+            this.radioButtonGetLastThree.Location = new System.Drawing.Point(818, 556);
+            this.radioButtonGetLastThree.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonGetLastThree.Name = "radioButtonGetLastThree";
+            this.radioButtonGetLastThree.Size = new System.Drawing.Size(149, 24);
+            this.radioButtonGetLastThree.TabIndex = 46;
+            this.radioButtonGetLastThree.TabStop = true;
+            this.radioButtonGetLastThree.Text = "Son Üç Değeri Al";
+            this.radioButtonGetLastThree.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSkipFirstFive
+            // 
+            this.radioButtonSkipFirstFive.AutoSize = true;
+            this.radioButtonSkipFirstFive.Location = new System.Drawing.Point(818, 590);
+            this.radioButtonSkipFirstFive.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonSkipFirstFive.Name = "radioButtonSkipFirstFive";
+            this.radioButtonSkipFirstFive.Size = new System.Drawing.Size(158, 24);
+            this.radioButtonSkipFirstFive.TabIndex = 47;
+            this.radioButtonSkipFirstFive.TabStop = true;
+            this.radioButtonSkipFirstFive.Text = "İlk Beş Değeri Atla";
+            this.radioButtonSkipFirstFive.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOrderByName
+            // 
+            this.radioButtonOrderByName.AutoSize = true;
+            this.radioButtonOrderByName.Location = new System.Drawing.Point(818, 624);
+            this.radioButtonOrderByName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonOrderByName.Name = "radioButtonOrderByName";
+            this.radioButtonOrderByName.Size = new System.Drawing.Size(140, 24);
+            this.radioButtonOrderByName.TabIndex = 48;
+            this.radioButtonOrderByName.TabStop = true;
+            this.radioButtonOrderByName.Text = "Ada Göre Sırala";
+            this.radioButtonOrderByName.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1208, 749);
+            this.Controls.Add(this.radioButtonOrderByName);
+            this.Controls.Add(this.radioButtonSkipFirstFive);
+            this.Controls.Add(this.radioButtonGetLastThree);
+            this.Controls.Add(this.radioButtonGetFirstThree);
             this.Controls.Add(this.radioButtonJoin);
             this.Controls.Add(this.radioButtonPassOrFail);
             this.Controls.Add(this.radioButtonConditionalSelect);
@@ -223,5 +279,9 @@ namespace MyApp
         private System.Windows.Forms.RadioButton radioButtonConditionalSelect;
         private System.Windows.Forms.RadioButton radioButtonPassOrFail;
         private System.Windows.Forms.RadioButton radioButtonJoin;
+        private System.Windows.Forms.RadioButton radioButtonGetFirstThree;
+        private System.Windows.Forms.RadioButton radioButtonGetLastThree;
+        private System.Windows.Forms.RadioButton radioButtonSkipFirstFive;
+        private System.Windows.Forms.RadioButton radioButtonOrderByName;
     }
 }

@@ -98,6 +98,34 @@ namespace MyApp
                                             });
                 dataGridView1.DataSource = query.ToList();
             }
+
+            // LinQ Take First 3 Rows.
+            if (radioButtonGetFirstThree.Checked == true)
+            {
+                var query = dbSinavOgrenciEntities.TBLOGRENCI.OrderBy(x=> x.ID).Take(3);
+                dataGridView1.DataSource = query.ToList();
+            }
+
+            // LinQ Take Last 3 Rows.
+            if (radioButtonGetLastThree.Checked == true)
+            {
+                var query = dbSinavOgrenciEntities.TBLOGRENCI.OrderByDescending(x=> x.ID).Take(3);
+                dataGridView1.DataSource = query.ToList();
+            }
+
+            // LinQ Order By ID and Skip First Five Rows
+            if (radioButtonSkipFirstFive.Checked == true)
+            {
+                var query = dbSinavOgrenciEntities.TBLOGRENCI.OrderBy(x=> x.ID).Skip(5);
+                dataGridView1.DataSource = query.ToList();
+            }
+
+            // LinQ Order By Name
+            if (radioButtonOrderByName.Checked == true)
+            {
+                var query = dbSinavOgrenciEntities.TBLOGRENCI.OrderBy(x => x.Ad);
+                dataGridView1.DataSource = query.ToList();
+            }
         }
     }
 }
