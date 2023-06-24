@@ -31,15 +31,42 @@ namespace MyApp
                 dataGridView1.DataSource = query.ToList();
             }
 
+            // LinQ Get Data by Name and Surname from TextBox, added with contains search
             if (radioButtonGetByTextBox.Checked == true)
             {
                 var text = textBoxGetByNameOrSurname.Text;
                 var query = dbSinavOgrenciEntities.TBLOGRENCI.Where(
-                                                                        x => x.Ad == text | 
-                                                                        x.Soyad == text | 
-                                                                        x.Ad.Contains(text) | 
+                                                                        x => x.Ad == text ||
+                                                                        x.Soyad == text ||
+                                                                        x.Ad.Contains(text) ||
                                                                         x.Soyad.Contains(text)
                                                                     );
+                dataGridView1.DataSource = query.ToList();
+            }
+
+            // LinQ Select restriction with one anonymous type
+            if (radioButtonGetBySurname.Checked == true)
+            {
+                var query = dbSinavOgrenciEntities.TBLOGRENCI.Select(q => new { SurName = q.Soyad });
+                dataGridView1.DataSource = query.ToList();
+            }
+
+            // LinQ Select restriction with two anonymoust type
+            if (radioButtonGetByBiggerNameSmallSurname.Checked == true)
+            {
+                var query = dbSinavOgrenciEntities.TBLOGRENCI.Select(x => new { Name = x.Ad.ToUpper(), SurName = x.Soyad.ToLower() });
+                //var query = dbSinavOgrenciEntities.TBLOGRENCI.Select(x => new { Name = x.Ad.ToUpper() + " " + x.Soyad.ToLower() });
+                dataGridView1.DataSource = query.ToList();
+            }
+
+            // LinQ Conditional Select with two anonymoust type
+            if (radioButtonConditionalSelect.Checked == true)
+            {
+                var query = dbSinavOgrenciEntities.TBLOGRENCI.Select(p => new
+                {
+                    Name = p.Ad.ToUpper(),
+                    SurName = p.Soyad.ToLower()
+                }).Where(x => x.Name == "Ferit");
                 dataGridView1.DataSource = query.ToList();
             }
         }

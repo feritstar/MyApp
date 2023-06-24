@@ -36,11 +36,15 @@ namespace MyApp
             this.btnGetByLinq = new System.Windows.Forms.Button();
             this.radioButtonGetByName = new System.Windows.Forms.RadioButton();
             this.radioButtonGetByTextBox = new System.Windows.Forms.RadioButton();
+            this.radioButtonGetBySurname = new System.Windows.Forms.RadioButton();
+            this.radioButtonGetByBiggerNameSmallSurname = new System.Windows.Forms.RadioButton();
+            this.radioButtonConditionalSelect = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
@@ -49,7 +53,7 @@ namespace MyApp
             // 
             // textBoxGetByNameOrSurname
             // 
-            this.textBoxGetByNameOrSurname.Location = new System.Drawing.Point(706, 197);
+            this.textBoxGetByNameOrSurname.Location = new System.Drawing.Point(263, 247);
             this.textBoxGetByNameOrSurname.MaxLength = 5000;
             this.textBoxGetByNameOrSurname.Name = "textBoxGetByNameOrSurname";
             this.textBoxGetByNameOrSurname.Size = new System.Drawing.Size(82, 20);
@@ -58,7 +62,7 @@ namespace MyApp
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(612, 200);
+            this.label13.Location = new System.Drawing.Point(169, 250);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 13);
@@ -110,11 +114,47 @@ namespace MyApp
             this.radioButtonGetByTextBox.Text = "Textten Gelen Veriye Göre";
             this.radioButtonGetByTextBox.UseVisualStyleBackColor = true;
             // 
+            // radioButtonGetBySurname
+            // 
+            this.radioButtonGetBySurname.AutoSize = true;
+            this.radioButtonGetBySurname.Location = new System.Drawing.Point(13, 271);
+            this.radioButtonGetBySurname.Name = "radioButtonGetBySurname";
+            this.radioButtonGetBySurname.Size = new System.Drawing.Size(95, 17);
+            this.radioButtonGetBySurname.TabIndex = 40;
+            this.radioButtonGetBySurname.TabStop = true;
+            this.radioButtonGetBySurname.Text = "Soyadına Göre";
+            this.radioButtonGetBySurname.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonGetByBiggerNameSmallSurname
+            // 
+            this.radioButtonGetByBiggerNameSmallSurname.AutoSize = true;
+            this.radioButtonGetByBiggerNameSmallSurname.Location = new System.Drawing.Point(12, 294);
+            this.radioButtonGetByBiggerNameSmallSurname.Name = "radioButtonGetByBiggerNameSmallSurname";
+            this.radioButtonGetByBiggerNameSmallSurname.Size = new System.Drawing.Size(138, 17);
+            this.radioButtonGetByBiggerNameSmallSurname.TabIndex = 41;
+            this.radioButtonGetByBiggerNameSmallSurname.TabStop = true;
+            this.radioButtonGetByBiggerNameSmallSurname.Text = "Ad Büyük Soyad Küçük";
+            this.radioButtonGetByBiggerNameSmallSurname.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonConditionalSelect
+            // 
+            this.radioButtonConditionalSelect.AutoSize = true;
+            this.radioButtonConditionalSelect.Location = new System.Drawing.Point(12, 317);
+            this.radioButtonConditionalSelect.Name = "radioButtonConditionalSelect";
+            this.radioButtonConditionalSelect.Size = new System.Drawing.Size(80, 17);
+            this.radioButtonConditionalSelect.TabIndex = 42;
+            this.radioButtonConditionalSelect.TabStop = true;
+            this.radioButtonConditionalSelect.Text = "Şartlı Seçim";
+            this.radioButtonConditionalSelect.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.radioButtonConditionalSelect);
+            this.Controls.Add(this.radioButtonGetByBiggerNameSmallSurname);
+            this.Controls.Add(this.radioButtonGetBySurname);
             this.Controls.Add(this.radioButtonGetByTextBox);
             this.Controls.Add(this.radioButtonGetByName);
             this.Controls.Add(this.textBoxGetByNameOrSurname);
@@ -140,5 +180,8 @@ namespace MyApp
         private System.Windows.Forms.Button btnGetByLinq;
         private System.Windows.Forms.RadioButton radioButtonGetByName;
         private System.Windows.Forms.RadioButton radioButtonGetByTextBox;
+        private System.Windows.Forms.RadioButton radioButtonGetBySurname;
+        private System.Windows.Forms.RadioButton radioButtonGetByBiggerNameSmallSurname;
+        private System.Windows.Forms.RadioButton radioButtonConditionalSelect;
     }
 }
